@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-
+//adding a comment to make sure this works
 public class Graphics extends JFrame implements ActionListener{
 	
 	public static final int WIDTH = 200;
