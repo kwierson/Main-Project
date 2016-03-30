@@ -4,8 +4,10 @@ import java.awt.event.*;
 //adding a comment to make sure this works
 public class Graphics extends JFrame implements ActionListener{
 	
-	public static final int WIDTH = 200;
+	public static final int WIDTH = 900;
 	public static final int HEIGHT = 900;
+	private JTextField ioField;
+	private double result = 0.0;
 	public static void main(String[] args){
 		
 		Graphics gui = new Graphics();
@@ -51,7 +53,11 @@ public class Graphics extends JFrame implements ActionListener{
 		
 		String buttonString = e.getActionCommand();
 		
-		if(buttonString.equals("Addition"));
+		if(buttonString.equals("Addition")){
+			AdditionButton();
+			
+		}
+			
 			
 		else if(buttonString.equals("Subtraction"));
 		else if(buttonString.equals("Multiplication"));
@@ -63,4 +69,38 @@ public class Graphics extends JFrame implements ActionListener{
 			System.out.println("Unexpected Error.");
 
 }
+	public void AdditionButton(){
+		
+		setSize(WIDTH, HEIGHT);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLayout(new BorderLayout());
+	
+		JPanel matrixAPanel = new JPanel();
+		
+		matrixAPanel.setLayout(new GridLayout(1,2));
+		
+		ioField = new JTextField("Enter a number here");
+		matrixAPanel.add(ioField);
+		add(matrixAPanel, BorderLayout.NORTH);
+		
+		add(matrixAPanel);
+		
+		JPanel buttonPanel2 = new JPanel();
+		buttonPanel2.setLayout(new FlowLayout());
+		JButton actionButton = new JButton("Click Me");
+		actionButton.addActionListener(this);
+		buttonPanel2.add(actionButton);
+		
+		add (buttonPanel2);
+		
+	}
+	
+	/**public void actionPerformed(ActionEvent event){
+		String actionCommand = event.getActionCommand();
+		
+		if(actionCommand.equals("Click Me"));
+		else
+			System.out.println("Unexpected Error.");
+	}*/
 }
+
