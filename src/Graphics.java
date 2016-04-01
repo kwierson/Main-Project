@@ -7,8 +7,7 @@ public class Graphics extends JFrame implements ActionListener{
 	
 	public static final int WIDTH = 900;
 	public static final int HEIGHT = 900;
-	private JTextField ioField;
-	private double result = 0.0;
+	
 	public static void main(String[] args){
 		
 		Graphics gui = new Graphics();
@@ -24,7 +23,7 @@ public class Graphics extends JFrame implements ActionListener{
 		JPanel buttonPanel = new JPanel();
 		
 		
-		buttonPanel.setLayout(new GridLayout(7,1));
+		buttonPanel.setLayout(new GridLayout(12,4));
 		JButton addButton = new JButton("Addition");
 		addButton.addActionListener(this);
 		buttonPanel.add(addButton);
@@ -71,44 +70,25 @@ public class Graphics extends JFrame implements ActionListener{
 
 }
 	public void AdditionButton(){
-		
-		setSize(WIDTH, HEIGHT);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setLayout(new BorderLayout());
+		  
 	
-		JPanel matrixAPanel = new JPanel();
-		
-		matrixAPanel.setLayout(new GridLayout(6,1));
-		
-		//ioField = new JTextField("Enter a number here");
-		//matrixAPanel.add(ioField);
-		add(matrixAPanel, BorderLayout.NORTH);
-		
-		add(matrixAPanel);
 		String[] rowString = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
+		JLabel actionButton = new JLabel("Matrix Size");
 		JComboBox rows = new JComboBox(rowString);
 		rows.addActionListener(this);
 		JComboBox cols = new JComboBox(rowString);
 		cols.addActionListener(this);
 		
 		JPanel buttonPanel2 = new JPanel();
-		buttonPanel2.setLayout(new FlowLayout());
-		JButton actionButton = new JButton("Matrix ");
-		actionButton.addActionListener(this);
+		buttonPanel2.setLayout(new GridLayout(12,1));
+		buttonPanel2.add(actionButton);
 		buttonPanel2.add(rows);
 		buttonPanel2.add(cols);
-		buttonPanel2.add(actionButton);
 		
-		add (buttonPanel2);
+		
+		add (buttonPanel2, BorderLayout.CENTER);
 		
 	}
 	
-	/**public void actionPerformed(ActionEvent event){
-		String actionCommand = event.getActionCommand();
-		
-		if(actionCommand.equals("Click Me"));
-		else
-			System.out.println("Unexpected Error.");
-	}*/
-}
 
+}
